@@ -1,3 +1,1273 @@
-<script>
-  location.href="https://home-acesweb.com/auth/";
-</script>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mfy Importadora - Suvenires, Bijuterias e Artesanatos</title>
+    <meta name="description" content="Mfy Importadora - Comércio varejista de suvenires, bijuterias e artesanatos em Ourinhos/SP. Qualidade e variedade desde 2017.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #0d1b2a 0%, #1b3a5c 100%);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: flex-end;
+            padding: 5px 5%;
+            background: rgba(0,0,0,0.3);
+        }
+
+        .header-top span {
+            color: rgba(255,255,255,0.6);
+            font-size: 11px;
+            letter-spacing: 0.5px;
+        }
+
+        .header-top span strong {
+            color: #e8c87a;
+            font-weight: 600;
+        }
+
+        .header-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 5%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: #e8c87a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0d1b2a;
+            font-weight: 800;
+            font-size: 14px;
+        }
+
+        .logo h1 {
+            color: #fff;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo h1 span {
+            color: #e8c87a;
+        }
+
+        .logo small {
+            display: block;
+            color: rgba(255,255,255,0.5);
+            font-size: 10px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 5px;
+        }
+
+        .nav-menu > li {
+            position: relative;
+        }
+
+        .nav-menu > li > a {
+            color: #fff;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 10px 14px;
+            display: block;
+            transition: color 0.3s;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-menu > li > a:hover {
+            color: #e8c87a;
+        }
+
+        .nav-menu li .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            min-width: 220px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .nav-menu li:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown li a {
+            display: block;
+            padding: 10px 18px;
+            color: #333;
+            font-size: 13px;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s;
+        }
+
+        .dropdown li a:hover {
+            background: #e8c87a;
+            color: #0d1b2a;
+        }
+
+        .header-icons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 18px;
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            opacity: 1;
+            color: #e8c87a;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Slider */
+        .hero-slider {
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider-container {
+            display: flex;
+            transition: transform 0.6s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+            position: relative;
+            height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide:nth-child(1) {
+            background: linear-gradient(135deg, #0d1b2a 0%, #2a4b6e 100%);
+        }
+        .slide:nth-child(2) {
+            background: linear-gradient(135deg, #1b3a5c 0%, #3d5f7a 100%);
+        }
+        .slide:nth-child(3) {
+            background: linear-gradient(135deg, #0d1b2a 0%, #4a6f8f 100%);
+        }
+
+        .slide-content {
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .slide-content .badge {
+            display: inline-block;
+            background: #e8c87a;
+            color: #0d1b2a;
+            padding: 5px 25px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .slide-content h2 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            line-height: 1.1;
+        }
+
+        .slide-content h2 span {
+            color: #e8c87a;
+        }
+
+        .slide-content p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .slide-content .btn-primary {
+            display: inline-block;
+            background: #e8c87a;
+            color: #0d1b2a;
+            padding: 14px 45px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .slide-content .btn-primary:hover {
+            background: #f0d88a;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(232, 200, 122, 0.3);
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-nav:hover {
+            background: rgba(232, 200, 122, 0.4);
+        }
+
+        .slider-nav.prev {
+            left: 20px;
+        }
+
+        .slider-nav.next {
+            right: 20px;
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .slider-dots .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .slider-dots .dot.active {
+            background: #e8c87a;
+            transform: scale(1.2);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 60px 5%;
+            background: #f8f5ee;
+        }
+
+        .cta-section h2 {
+            font-size: 32px;
+            color: #0d1b2a;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .cta-section h2 span {
+            color: #b8953a;
+        }
+
+        .cta-section p {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 16px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section .btn-cta {
+            display: inline-block;
+            background: #0d1b2a;
+            color: #fff;
+            padding: 16px 50px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-section .btn-cta:hover {
+            background: #1b3a5c;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(13, 27, 42, 0.2);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 5%;
+            background: #fff;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, #0d1b2a 0%, #2a4b6e 100%);
+            border-radius: 15px;
+            height: 420px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image .image-text {
+            font-size: 16px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin-top: 20px;
+            opacity: 0.8;
+        }
+
+        .about-image .since {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            font-size: 13px;
+            opacity: 0.3;
+            letter-spacing: 2px;
+        }
+
+        .about-text h2 {
+            font-size: 36px;
+            color: #0d1b2a;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .about-text h2 span {
+            color: #b8953a;
+        }
+
+        .about-text .subtitle {
+            color: #b8953a;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .about-text p {
+            color: #555;
+            font-size: 15px;
+            margin-bottom: 15px;
+            line-height: 1.9;
+        }
+
+        .about-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .about-info-item {
+            background: #f8f5ee;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 3px solid #e8c87a;
+        }
+
+        .about-info-item strong {
+            display: block;
+            color: #0d1b2a;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .about-info-item span {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Products Section */
+        .products-section {
+            padding: 80px 5%;
+            background: #f8f5ee;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header .subtitle {
+            color: #b8953a;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            color: #0d1b2a;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section-header h2 span {
+            color: #b8953a;
+        }
+
+        .section-header p {
+            color: #666;
+            max-width: 700px;
+            margin: 10px auto 0;
+            font-size: 15px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            transition: all 0.4s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.12);
+        }
+
+        .product-card-image {
+            height: 220px;
+            background: linear-gradient(135deg, #1b3a5c 0%, #4a6f8f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 65px;
+            color: rgba(255,255,255,0.2);
+        }
+
+        .product-card-content {
+            padding: 25px;
+        }
+
+        .product-card-content h3 {
+            font-size: 18px;
+            color: #0d1b2a;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .product-card-content p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .product-card-content a {
+            color: #b8953a;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .product-card-content a:hover {
+            color: #e8c87a;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 5%;
+            background: #fff;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info h2 {
+            font-size: 36px;
+            color: #0d1b2a;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .contact-info h2 span {
+            color: #b8953a;
+        }
+
+        .contact-info .subtitle {
+            color: #b8953a;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+            color: #555;
+            font-size: 15px;
+            margin-bottom: 25px;
+            line-height: 1.9;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 20px;
+            background: #f8f5ee;
+            border-radius: 8px;
+        }
+
+        .contact-detail .icon {
+            font-size: 22px;
+            width: 40px;
+            text-align: center;
+        }
+
+        .contact-detail .info strong {
+            display: block;
+            color: #0d1b2a;
+            font-size: 13px;
+        }
+
+        .contact-detail .info span {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .contact-form {
+            background: #f8f5ee;
+            padding: 40px;
+            border-radius: 15px;
+        }
+
+        .contact-form h3 {
+            font-size: 22px;
+            color: #0d1b2a;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .contact-form p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #0d1b2a;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0ddd8;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            transition: border-color 0.3s;
+            background: #fff;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #e8c87a;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            display: inline-block;
+            background: #0d1b2a;
+            color: #fff;
+            padding: 14px 40px;
+            border: none;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-submit:hover {
+            background: #1b3a5c;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(13, 27, 42, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background: #0d1b2a;
+            color: #fff;
+            padding: 60px 5% 0;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-section h4 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #fff;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .footer-section p {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #e8c87a;
+        }
+
+        .footer-section .highlight {
+            color: #e8c87a;
+            font-weight: 600;
+        }
+
+        .footer-section .logo-footer {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .footer-section .logo-footer .icon {
+            width: 45px;
+            height: 45px;
+            background: #e8c87a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0d1b2a;
+            font-weight: 800;
+            font-size: 13px;
+        }
+
+        .footer-section .logo-footer h3 {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .footer-section .logo-footer h3 span {
+            color: #e8c87a;
+        }
+
+        .footer-section .logo-footer small {
+            display: block;
+            color: rgba(255,255,255,0.3);
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 25px 0;
+            color: rgba(255,255,255,0.4);
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-bottom a {
+            color: #e8c87a;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .about-image {
+                height: 350px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #0d1b2a;
+                flex-direction: column;
+                padding: 20px;
+                border-top: 1px solid rgba(255,255,255,0.05);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .header-icons .social-icons {
+                display: none;
+            }
+
+            .hero-slider {
+                margin-top: 70px;
+            }
+
+            .slide {
+                height: 420px;
+            }
+
+            .slide-content h2 {
+                font-size: 32px;
+            }
+
+            .slide-content p {
+                font-size: 16px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section h2,
+            .section-header h2,
+            .about-text h2,
+            .contact-info h2 {
+                font-size: 28px;
+            }
+
+            .about-info {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slide {
+                height: 380px;
+            }
+
+            .slide-content h2 {
+                font-size: 26px;
+            }
+
+            .slider-nav {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <span>CNPJ: <strong>29.139.147/0001-49</strong> | Ourinhos - SP | Desde 2017</span>
+        </div>
+        <div class="header-main">
+            <a href="#" class="logo">
+                <div class="logo-icon">MF</div>
+                <div>
+                    <h1>Mfy<span>Importadora</span></h1>
+                    <small>Suvenires · Bijuterias · Artesanatos</small>
+                </div>
+            </a>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li>
+                        <a href="#sobre">Sobre</a>
+                        <ul class="dropdown">
+                            <li><a href="#sobre">A Empresa</a></li>
+                            <li><a href="#">Nossa História</a></li>
+                            <li><a href="#">Missão e Valores</a></li>
+                            <li><a href="#">Diferenciais</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#produtos">Produtos</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Suvenires</a></li>
+                            <li><a href="#">Bijuterias</a></li>
+                            <li><a href="#">Artesanatos</a></li>
+                            <li><a href="#">Presentes</a></li>
+                            <li><a href="#">Decoração</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <div class="social-icons">
+                    <a href="#" target="_blank">📷</a>
+                    <a href="#" target="_blank">📘</a>
+                    <a href="#" target="_blank">📌</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Slider -->
+    <section class="hero-slider" id="home">
+        <div class="slider-container" id="heroSlider">
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="badge">Desde 2017</div>
+                    <h2>Suvenires, Bijuterias <span>e Artesanatos</span></h2>
+                    <p>Encontre peças exclusivas e encantadoras para presentear ou decorar com estilo e personalidade.</p>
+                    <a href="#produtos" class="btn-primary">Ver Produtos</a>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="badge">Qualidade & Variedade</div>
+                    <h2>Peças <span>Exclusivas</span></h2>
+                    <p>Seleção especial de suvenires, bijuterias e artesanatos com acabamento de qualidade.</p>
+                    <a href="#produtos" class="btn-primary">Conheça Nossos Produtos</a>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="badge">Ourinhos - SP</div>
+                    <h2>Presentes <span>que Encantam</span></h2>
+                    <p>Atendemos com excelência clientes em Ourinhos e região, sempre com produtos diferenciados.</p>
+                    <a href="#contato" class="btn-primary">Fale Conosco</a>
+                </div>
+            </div>
+        </div>
+        <button class="slider-nav prev" onclick="prevSlide()">&#10094;</button>
+        <button class="slider-nav next" onclick="nextSlide()">&#10095;</button>
+        <div class="slider-dots" id="sliderDots"></div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Encontre o presente <span>perfeito</span></h2>
+        <p>Descubra nossa seleção de suvenires, bijuterias e artesanatos com qualidade e exclusividade.</p>
+        <a href="#produtos" class="btn-cta">Explorar Produtos</a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="sobre">
+        <div class="about-grid">
+            <div class="about-image">
+                ✨
+                <div class="image-text">MFY IMPORTADORA</div>
+                <div class="since">DESDE 2017</div>
+            </div>
+            <div class="about-text">
+                <div class="subtitle">Sobre Nós</div>
+                <h2>Mfy <span>Importadora</span></h2>
+                <p><strong>CPA e Filhos LTDA</strong>, sob o nome fantasia <strong>Mfy Importadora</strong>, é uma empresa especializada no <strong>comércio varejista de suvenires, bijuterias e artesanatos</strong>, localizada em <strong>Ourinhos, São Paulo</strong>.</p>
+                <p>Fundada em <strong>24 de novembro de 2017</strong>, a empresa se dedica a oferecer produtos exclusivos e de qualidade, que encantam clientes e valorizam momentos especiais.</p>
+                <p>Com <strong>CNPJ 29.139.147/0001-49</strong>, a Mfy Importadora atua com compromisso e paixão, sempre buscando a satisfação dos seus clientes.</p>
+                <div class="about-info">
+                    <div class="about-info-item">
+                        <strong>📅 Fundação</strong>
+                        <span>24/11/2017</span>
+                    </div>
+                    <div class="about-info-item">
+                        <strong>📍 Localização</strong>
+                        <span>Ourinhos - SP</span>
+                    </div>
+                    <div class="about-info-item">
+                        <strong>🏢 Atividade</strong>
+                        <span>Suvenires, Bijuterias e Artesanatos</span>
+                    </div>
+                    <div class="about-info-item">
+                        <strong>✅ Situação</strong>
+                        <span>Ativa</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="produtos">
+        <div class="section-header">
+            <div class="subtitle">Nossos Produtos</div>
+            <h2>Produtos <span>Exclusivos</span></h2>
+            <p>Oferecemos uma variedade de suvenires, bijuterias e artesanatos para todos os gostos e ocasiões.</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-card-image">🎁</div>
+                <div class="product-card-content">
+                    <h3>Suvenires</h3>
+                    <p>Lembranças especiais para presentear ou colecionar, com design único e qualidade.</p>
+                    <a href="#">Saiba Mais →</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-image">💎</div>
+                <div class="product-card-content">
+                    <h3>Bijuterias</h3>
+                    <p>Acessórios elegantes e modernos que complementam o look com estilo e sofisticação.</p>
+                    <a href="#">Saiba Mais →</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-image">🎨</div>
+                <div class="product-card-content">
+                    <h3>Artesanatos</h3>
+                    <p>Peças artesanais feitas com dedicação, que carregam história e autenticidade.</p>
+                    <a href="#">Saiba Mais →</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-image">🎈</div>
+                <div class="product-card-content">
+                    <h3>Presentes</h3>
+                    <p>Opções variadas para presentear em datas especiais e surpreender quem você ama.</p>
+                    <a href="#">Saiba Mais →</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-image">🏠</div>
+                <div class="product-card-content">
+                    <h3>Decoração</h3>
+                    <p>Itens decorativos que transformam ambientes com charme, cor e personalidade.</p>
+                    <a href="#">Saiba Mais →</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-image">📿</div>
+                <div class="product-card-content">
+                    <h3>Acessórios</h3>
+                    <p>Complementos variados para todos os estilos, desde o clássico ao contemporâneo.</p>
+                    <a href="#">Saiba Mais →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contato">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="subtitle">Entre em Contato</div>
+                <h2>Fale <span>Conosco</span></h2>
+                <p>Estamos prontos para atendê-lo. Entre em contato para mais informações sobre nossos produtos e serviços.</p>
+                <div class="contact-details">
+                    <div class="contact-detail">
+                        <div class="icon">📍</div>
+                        <div class="info">
+                            <strong>Endereço</strong>
+                            <span>Ourinhos - SP</span>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="icon">📞</div>
+                        <div class="info">
+                            <strong>Telefone</strong>
+                            <span>(14) 99999-9999</span>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="icon">✉️</div>
+                        <div class="info">
+                            <strong>E-mail</strong>
+                            <span>contato@mfyimportadora.com</span>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="icon">🕐</div>
+                        <div class="info">
+                            <strong>Horário de Atendimento</strong>
+                            <span>Segunda a Sexta, 8h às 18h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Envie uma Mensagem</h3>
+                <p>Preencha o formulário abaixo e retornaremos o mais breve possível.</p>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" placeholder="Seu nome completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" placeholder="Seu melhor e-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" placeholder="(00) 00000-0000">
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" placeholder="Digite sua mensagem aqui..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-section">
+                <div class="logo-footer">
+                    <div class="icon">MF</div>
+                    <div>
+                        <h3>Mfy<span>Importadora</span></h3>
+                        <small>Suvenires · Bijuterias · Artesanatos</small>
+                    </div>
+                </div>
+                <p><strong style="color:#e8c87a;">CNPJ:</strong> 29.139.147/0001-49</p>
+                <p><strong style="color:#e8c87a;">Fundação:</strong> 24/11/2017</p>
+                <p><strong style="color:#e8c87a;">Localização:</strong> Ourinhos - SP</p>
+                <p><strong style="color:#e8c87a;">Situação:</strong> Ativa</p>
+            </div>
+            <div class="footer-section">
+                <h4>Links Rápidos</h4>
+                <a href="#home">Home</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#produtos">Produtos</a>
+                <a href="#contato">Contato</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contato</h4>
+                <p>📞 (14) 99999-9999</p>
+                <p>📍 Ourinhos - SP</p>
+                <p>✉️ contato@mfyimportadora.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2025 <a href="#">Mfy Importadora - CPA e Filhos LTDA</a> | CNPJ: 29.139.147/0001-49 | Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Hero Slider
+        let heroCurrentSlide = 0;
+        const heroSlider = document.getElementById('heroSlider');
+        const heroSlides = heroSlider.querySelectorAll('.slide');
+        const totalHeroSlides = heroSlides.length;
+        const sliderDots = document.getElementById('sliderDots');
+
+        for (let i = 0; i < totalHeroSlides; i++) {
+            const dot = document.createElement('span');
+            dot.className = 'dot' + (i === 0 ? ' active' : '');
+            dot.onclick = () => goToSlide(i);
+            sliderDots.appendChild(dot);
+        }
+
+        function updateSlider() {
+            heroSlider.style.transform = `translateX(-${heroCurrentSlide * 100}%)`;
+            document.querySelectorAll('.slider-dots .dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index === heroCurrentSlide);
+            });
+        }
+
+        function nextSlide() {
+            heroCurrentSlide = (heroCurrentSlide + 1) % totalHeroSlides;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            heroCurrentSlide = (heroCurrentSlide - 1 + totalHeroSlides) % totalHeroSlides;
+            updateSlider();
+        }
+
+        function goToSlide(index) {
+            heroCurrentSlide = index;
+            updateSlider();
+        }
+
+        setInterval(nextSlide, 5000);
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Contact Form
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
